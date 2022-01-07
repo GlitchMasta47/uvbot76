@@ -66,6 +66,9 @@ bot.on('messageCreate', async msg => {
         msg.reply('Error: ' + e.message);
       });
       break;
+    case 'leave':
+      msg.guild.me.voice.disconnect();
+      break;
     case 'invite':
       return msg.reply(bot.generateInvite(BOT_INVITE_OPTIONS));
       break;
@@ -83,6 +86,10 @@ bot.on('interactionCreate', async interaction => {
         console.error(e);
         interaction.reply({ content: 'Error: ' + e.message });
       });
+      break;
+    case 'leave':
+      interaction.guild.me.voice.disconnect();
+      interaction.reply({ content: 'Ok', ephemeral: true });
       break;
     case 'invite':
       interaction.reply({ content: bot.generateInvite(BOT_INVITE_OPTIONS) });

@@ -1,6 +1,6 @@
 {
   "name": "uvbot76",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "UVB76 but as a Discord bot",
   "main": "bot.js",
   "repository": "https://github.com/GlitchMasta47/uvbot76",
